@@ -1,0 +1,13 @@
+{
+	"name": "@luminu/core",
+	"version": "0.1.0",
+	"description": "",
+	"main": "index.js",
+	"repository": {
+		"type": "git",
+		"url": "git@git.luminu.net:SrTeam/lumiwebcore.git"
+	},
+	"keywords": [],
+	"author": "",
+	"license": "ISC"
+}

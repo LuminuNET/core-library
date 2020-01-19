@@ -1,8 +1,8 @@
 {
 	"name": "@luminu/core",
-	"version": "0.2.2",
+	"version": "0.2.3",
 	"description": "",
-	"main": "index.ts",
+	"types": "index.ts",
 	"repository": {
 		"type": "git",
 		"url": "git@git.luminu.net:SrTeam/lumiwebcore.git"

@@ -9,5 +9,11 @@
 	},
 	"keywords": [],
 	"author": "",
-	"license": "ISC"
+	"license": "ISC",
+	"dependencies": {
+		"ioredis": "^4.14.1"
+	},
+	"devDependencies": {
+		"@types/ioredis": "^4.14.4"
+	}
 }

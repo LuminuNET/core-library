@@ -3,6 +3,13 @@ import Redis from 'ioredis';
 let redis: Redis.Redis;
 let baseKey: string;
 
+/**
+ *
+ * @param scope
+ * @param port
+ * @param ip
+ * @param connectionTimeout
+ */
 const createRedisConnection = (
 	scope: string,
 	port: number,
@@ -15,6 +22,31 @@ const createRedisConnection = (
 
 	// sets the base scoped key for redis
 	baseKey = `lm:web:${scope}:`;
+};
+
+/**
+ *
+ * @param channel
+ * @param identifier
+ * @param _buffer
+ * @param cb
+ */
+const publishBinary = async (
+	channel: string,
+	identifier: string,
+	_buffer: Buffer,
+	cb: (err: Error, res: number) => void
+) => {
+	const encodedBuffer = _buffer.toString('base64');
+	redis.publish(channel, `b${identifier}|${encodedBuffer}`, cb);
+};
+
+/**
+ *
+ * @param channels
+ */
+const subscribe = async (channels: string[]) => {
+	return await redis.subscribe(...channels);
 };
 
 /**

@@ -60,7 +60,7 @@ const subscribe = async (channels: string[]) => {
 const publish = (
 	channel: string,
 	message: string,
-	cb?: (error: Error, res: number) => void
+	cb: (error: Error, res: number) => void
 ) => {
 	redis.publish(channel, message, cb);
 };

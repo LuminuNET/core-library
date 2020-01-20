@@ -1,9 +1,15 @@
 {
 	"name": "@luminu/core",
-	"version": "0.2.4",
+	"version": "0.3.0",
+	"private": true,
 	"description": "",
-	"main": "index.js",
-	"types": "index.ts",
+	"main": "./build/index.js",
+	"types": "./types/index.d.ts",
+	"scripts": {
+		"build": "npm run build:bash",
+		"build:cmd": "rmdir /q/s build && rollup -c",
+		"build:bash": "rm -rf build && rollup -c"
+	},
 	"repository": {
 		"type": "git",
 		"url": "git@git.luminu.net:SrTeam/lumiwebcore.git"
@@ -15,6 +21,11 @@
 		"ioredis": "^4.14.1"
 	},
 	"devDependencies": {
-		"@types/ioredis": "^4.14.4"
+		"@types/ioredis": "^4.14.4",
+		"@typescript-eslint/eslint-plugin": "^2.16.0",
+		"@typescript-eslint/parser": "^2.16.0",
+		"eslint": "^6.8.0",
+		"rollup": "^1.29.0",
+		"rollup-plugin-typescript": "^1.0.1"
 	}
 }

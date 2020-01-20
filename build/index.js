@@ -1,11 +1,5 @@
 /* @luminu/core | version 0.3.0 | author Keimeno */
-'use strict';
-
-Object.defineProperty(exports, '__esModule', { value: true });
-
-function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
-
-var Redis = _interopDefault(require('ioredis'));
+import Redis from 'ioredis';
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -289,6 +283,4 @@ var LuminuBuffer = /** @class */ (function () {
 }());
 var buffer_service = new LuminuBuffer();
 
-exports.Buffer = buffer_service;
-exports.Locale = locale_service;
-exports.Redis = redis_service;
+export { buffer_service as Buffer, locale_service as Locale, redis_service as Redis };

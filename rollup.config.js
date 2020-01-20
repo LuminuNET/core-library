@@ -24,7 +24,7 @@ export default [
 		output: Object.assign({}, output, {
 			exports: 'named',
 			file: 'build/index.js',
-			format: 'esm'
+			format: 'cjs'
 		})
 	}
 ];

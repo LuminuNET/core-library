@@ -25,4 +25,4 @@ class LuminuBuffer {
 	}
 }
 
-export default new LuminuBuffer();
+export default LuminuBuffer;

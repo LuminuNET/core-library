@@ -1,11 +1,11 @@
-/* @luminu/core | version 0.3.0 | author Keimeno */
+/* @luminu/core | version 0.4.0 | author Keimeno */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });
 
 function _interopDefault (ex) { return (ex && (typeof ex === 'object') && 'default' in ex) ? ex['default'] : ex; }
 
-var Redis = _interopDefault(require('ioredis'));
+var Redis$1 = _interopDefault(require('ioredis'));
 
 /*! *****************************************************************************
 Copyright (c) Microsoft Corporation. All rights reserved.
@@ -69,7 +69,7 @@ var baseKey;
  * @param connectionTimeout
  */
 var createRedisConnection = function (scope, port, ip, connectionTimeout) {
-    redis = new Redis(port, ip, {
+    redis = new Redis$1(port, ip, {
         connectTimeout: connectionTimeout
     });
     // sets the base scoped key for redis
@@ -234,7 +234,7 @@ var delUser = function (use, ip) { return __awaiter(void 0, void 0, Promise, fun
     });
 }); };
 
-var redis_service = /*#__PURE__*/Object.freeze({
+var Redis = /*#__PURE__*/Object.freeze({
     __proto__: null,
     createRedisConnection: createRedisConnection,
     publishBinary: publishBinary,
@@ -257,7 +257,7 @@ var toggleLocale = function () {
     window.localStorage.setItem(LOCALE_KEY, getLocale() === 'en' ? 'de' : 'en');
 };
 
-var locale_service = /*#__PURE__*/Object.freeze({
+var Locale = /*#__PURE__*/Object.freeze({
     __proto__: null,
     getLocale: getLocale,
     toggleLocale: toggleLocale
@@ -287,8 +287,14 @@ var LuminuBuffer = /** @class */ (function () {
     });
     return LuminuBuffer;
 }());
-var buffer_service = new LuminuBuffer();
 
-exports.Buffer = buffer_service;
-exports.Locale = locale_service;
-exports.Redis = redis_service;
+var Frontend = {
+    Locale: Locale
+};
+var Backend = {
+    Redis: Redis,
+    Buffer: LuminuBuffer
+};
+
+exports.Backend = Backend;
+exports.Frontend = Frontend;

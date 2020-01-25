@@ -1,7 +1,5 @@
-import * as Redis from '../src/common/redis.service';
-import * as Locale from '../src/common/locale.service';
-import Buffer from '../src/common/buffer.service';
+import { Backend, Frontend } from '../src/';
 
-export { Redis, Locale, Buffer };
+export { Backend, Frontend };
 
 declare module '@luminu/core';

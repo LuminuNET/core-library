@@ -1,5 +1,3 @@
-import { Backend, Frontend } from '../src/';
-
-export { Backend, Frontend };
+export * from '../src';
 
 declare module '@luminu/core';

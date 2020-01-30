@@ -79,7 +79,7 @@ var createRedisConnection = function (scope, port, ip, connectionTimeout) {
  *
  * @param channel
  * @param identifier
- * @param _buffer
+ * @param buffer
  * @param cb
  */
 var publishBinary = function (channel, identifier, buffer, cb) { return __awaiter(void 0, void 0, Promise, function () {
@@ -233,6 +233,19 @@ var delUser = function (use, ip) { return __awaiter(void 0, void 0, Promise, fun
         return [2 /*return*/];
     });
 }); };
+/**
+ * [!] WARNING [!]
+ * Don't forget to set the proper key!
+ * The key that usually is being used is constructed as the following:
+ * baseKey + use + ':' + scoped
+ *
+ * Returns the redis instance,
+ * only use if you need to
+ * access an unsupported method.
+ */
+var getRedis = function () {
+    return redis;
+};
 
 var redis_service = /*#__PURE__*/Object.freeze({
     __proto__: null,
@@ -245,6 +258,7 @@ var redis_service = /*#__PURE__*/Object.freeze({
     delValue: delValue,
     incrUser: incrUser,
     delUser: delUser,
+    getRedis: getRedis,
     get baseKey () { return baseKey; },
     'default': createRedisConnection
 });

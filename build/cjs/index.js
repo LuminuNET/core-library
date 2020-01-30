@@ -1,4 +1,4 @@
-/* @luminu/core | version 0.5.0 | author Keimeno */
+/* @luminu/core | version 0.5.1 | author Keimeno */
 'use strict';
 
 Object.defineProperty(exports, '__esModule', { value: true });

@@ -28,7 +28,7 @@ const createRedisConnection = (
  *
  * @param channel
  * @param identifier
- * @param _buffer
+ * @param buffer
  * @param cb
  */
 const publishBinary = async (
@@ -169,6 +169,20 @@ const delUser = async (use: string, ip: string): Promise<void> => {
   redis.del(key);
 };
 
+/**
+ * [!] WARNING [!]
+ * Don't forget to set the proper key!
+ * The key that usually is being used is constructed as the following:
+ * baseKey + use + ':' + scoped
+ *
+ * Returns the redis instance,
+ * only use if you need to
+ * access an unsupported method.
+ */
+const getRedis = (): Redis.Redis => {
+  return redis;
+};
+
 export {
   createRedisConnection,
   publishBinary,
@@ -179,6 +193,7 @@ export {
   delValue,
   incrUser,
   delUser,
+  getRedis,
   baseKey
 };
 

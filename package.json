@@ -1,9 +1,10 @@
 {
   "name": "@luminu/core",
-  "version": "0.5.0",
+  "version": "0.5.1",
   "private": false,
   "description": "Luminu Web Core",
-  "main": "./build/index.js",
+  "main": "./build/cjs/index.js",
+  "module": "./build/esm/index.js",
   "types": "./types/index.d.ts",
   "scripts": {
     "build": "npm run build:bash",

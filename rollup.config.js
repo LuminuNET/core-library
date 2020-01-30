@@ -20,11 +20,26 @@ export default [
       resolve({ browser: true, modulesOnly: true }),
       commonjs()
     ],
-    external: ['unfetch/polyfill'],
+    external: ['ioredis'],
     output: Object.assign({}, output, {
       exports: 'named',
-      file: 'build/index.js',
+      file: 'build/cjs/index.js',
       format: 'cjs'
+    })
+  },
+  {
+    input,
+    plugins: [
+      tsPlugin,
+      json(),
+      resolve({ browser: true, modulesOnly: true }),
+      commonjs()
+    ],
+    external: ['ioredis'],
+    output: Object.assign({}, output, {
+      exports: 'named',
+      file: 'build/esm/index.js',
+      format: 'esm'
     })
   }
 ];

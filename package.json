@@ -1,6 +1,6 @@
 {
   "name": "@luminu/core",
-  "version": "0.5.1",
+  "version": "0.5.2",
   "private": false,
   "description": "Luminu Web Core",
   "main": "./build/cjs/index.js",

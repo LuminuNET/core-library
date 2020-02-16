@@ -1,43 +1,54 @@
 @import './_variables.scss';
 
 * {
-	margin: 0;
-	padding: 0;
-	box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
 body {
-	overflow-y: scroll;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	background-color: $background;
+  overflow-y: scroll;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background-color: $background;
+}
+
+body,
+html,
+#app {
+  height: 100%;
+}
+
+#app {
+  display: flex;
+  flex-direction: column;
 }
 
 .container {
-	max-width: $defaultMaxWidth;
-	margin: 0 auto;
+  max-width: $defaultMaxWidth;
+  margin: 0 auto;
 }
 
 @media screen and (max-width: $breakpoint) {
-	.container {
-		max-width: 95%;
-	}
+  .container {
+    max-width: 95%;
+  }
 }
 
 .view {
-	padding: 50px 0px;
+  padding: 50px 0px;
 }
 
 .title {
-	font-family: 'Segoe UI', sans-serif;
-	font-size: 16px;
-	font-weight: bold;
-	text-transform: uppercase;
-	color: $lmColor3;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 16px;
+  font-weight: bold;
+  text-transform: uppercase;
+  color: $lmColor3;
 }
 
 .description {
-	font-family: 'Segoe UI', sans-serif;
-	font-size: 14px;
-	font-weight: normal;
-	color: #555;
+  font-family: 'Segoe UI', sans-serif;
+  font-size: 14px;
+  font-weight: normal;
+  color: #555;
 }

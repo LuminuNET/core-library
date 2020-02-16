@@ -1,4 +1,4 @@
-/* @luminu/core | version 0.5.1 | author Keimeno */
+/* @luminu/core | version 0.5.2 | author Keimeno */
 import Redis from 'ioredis';
 
 /*! *****************************************************************************

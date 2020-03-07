@@ -7,3 +7,9 @@ export const footer = {
   home: 'Home',
   softwareBy: 'Software by'
 };
+
+export const alert = {
+  alert: 'Alert',
+  continue: 'Continue',
+  cancel: 'Cancel'
+};
